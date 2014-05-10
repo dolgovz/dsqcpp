@@ -52,5 +52,33 @@ Lots * readFromFile(int *size) {
 	}
 }
 
-//void deleteFromFile(Lots lot, int i){
-//}
+void deleteFromFile(){
+	int size;
+	ifstream f ("lots.dev",ios::binary);
+	if(!f) {
+		cout<<"Error with file\n";
+		size=0;
+	} else {
+		f.seekg(0,ios::end);
+		size=f.tellg()/sizeof(Lots);
+	}
+	f.close();
+	
+	int n;
+	Lots *lots=new Lots[size];
+	
+	do {
+		cout<<"Enter lot number:";
+	    cin>>n;
+	} while(n-1>=size || n-1<0);
+
+	
+	lots = readFromFile(&size);
+	ofstream g("lots.dev",ios::binary);
+	for (int i = 0; i < size; i++) {
+		if(i != n-1) {
+			g.write((char *)&lots[i],sizeof(Lots));
+		}
+	}
+	g.close();
+}
