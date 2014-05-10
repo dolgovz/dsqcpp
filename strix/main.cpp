@@ -10,7 +10,7 @@ int main() {
 	int choice;
 	do {
 		system("cls");
-		cout<<"MENU:\n1)Add to file\n2)Read from file\n3)Delete from file\n4)Exit\n";
+		cout<<"ENU:\n1)Add to file\n2)Read from file\n3)Delete from file\n4)Exit\n";
 		cout<<"Enter your choice> ";
 		cin>>choice;
 		getchar();
