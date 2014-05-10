@@ -10,7 +10,7 @@ int main() {
 	int choice;
 	do {
 		system("cls");
-		cout<<"ENU:\n1)Add to file\n2)Read from file\n3)Delete from file\n4)Exit\n";
+		cout<<"MENU:\n1)Add to file\n2)Read from file\n3)Delete from file\n4)Exit\n";
 		cout<<"Enter your choice> ";
 		cin>>choice;
 		getchar();
@@ -36,11 +36,13 @@ int main() {
 
 
 			case 4: cout<<"bye bye!\n";
+				break;
+			default: cout<<"Incorrect number, try again!";
 			
 
 		}
 	}
-	while(choice!=3);
+	while(choice!=4);
 
 	system("PAUSE");
 	return 0;
