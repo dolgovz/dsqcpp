@@ -1,4 +1,4 @@
-﻿Build started 10.05.2014 16:10:28.
+﻿Build started 10.05.2014 16:12:40.
      1>Project "C:\Users\Edgar\Documents\GitHub\dsqcpp\strix\strix.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\strix.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -29,4 +29,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.56
+Time Elapsed 00:00:02.64
