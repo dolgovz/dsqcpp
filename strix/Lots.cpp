@@ -5,21 +5,20 @@
 #include"Lots.h"
 using namespace std;
 void inputLot(Lots *lot) {
-	cout<<"Enter lot name:";
-	cin.getline(lot->lotName,25);
-
+	do{
+		cout<<"Enter lot name:";
+		cin.getline(lot->lotName,25);	
+		}
+	while(isdigit(lot->lotName[0])); 
 	cout<<"Enter price:";
 	cin>>lot->price;
 	getchar();
-	
 	cout<<"Enter seller name:";
 	cin.getline(lot->seller,20);
-
-	 time_t now = time(0);
-  
-   char* dt = ctime(&now);
-   strcpy(lot->date, dt);
-
+	//DateTime Now
+	time_t now = time(0);
+    char* dt = ctime(&now);
+	strcpy(lot->date, dt);
 }
 
 void printLots(Lots lots, int i) {
@@ -82,3 +81,4 @@ void deleteFromFile(){
 	}
 	g.close();
 }
+

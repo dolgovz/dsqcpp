@@ -40,9 +40,8 @@ int main() {
 						break;
 
 			case 4: cout<<"bye bye!\n";
-
-			break;
-
+				break;
+			default: cout<<"Incorrect number, try again!";
 
 		}
 	}
