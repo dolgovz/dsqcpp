@@ -6,15 +6,30 @@
 using namespace std;
 void inputLot(Lots *lot) {
 	do{
-		cout<<"Enter lot name:";
-		cin.getline(lot->lotName,25);	
+		cout<<"Enter lot name:"<<endl;
+		cin.getline(lot->lotName,25);
+		if (isdigit(lot->lotName[0])){
+			cout<<"First symbol must be a letter\n";
 		}
+	}
 	while(isdigit(lot->lotName[0])); 
+
+
 	cout<<"Enter price:";
 	cin>>lot->price;
+
+	
 	getchar();
-	cout<<"Enter seller name:";
-	cin.getline(lot->seller,20);
+
+	do{
+		cout<<"Enter seller name:";
+		cin.getline(lot->seller,20);
+		if(isdigit(lot->seller[0])){
+			cout<<"First symbol must be a letter\n";
+		}
+	}
+	while(isdigit(lot->seller[0]));
+	
 	//DateTime Now
 	time_t now = time(0);
     char* dt = ctime(&now);
