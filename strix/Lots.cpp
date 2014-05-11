@@ -10,6 +10,7 @@ void inputLot(Lots *lot) {
 		cin.getline(lot->lotName,25);	
 		}
 	while(isdigit(lot->lotName[0])); 
+
 	cout<<"Enter price:";
 	cin>>lot->price;
 	getchar();
