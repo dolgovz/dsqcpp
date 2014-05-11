@@ -12,6 +12,6 @@ struct Lots {
 void inputLot(Lots * lot);
 void printLots(Lots lot,int i);
 void addTofile(Lots lot);
-//void deleteFromFile(Lots lot, int i,int *size);
+void deleteFromFile();
 Lots * readFromFile(int *size);
 
