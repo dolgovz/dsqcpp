@@ -13,12 +13,8 @@ void inputLot(Lots *lot) {
 		}
 	}
 	while(isdigit(lot->lotName[0])); 
-
-
 	cout<<"Enter price:";
 	cin>>lot->price;
-
-	
 	getchar();
 
 	do{
