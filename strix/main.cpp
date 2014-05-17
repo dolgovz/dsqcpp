@@ -6,46 +6,83 @@ using namespace std;
 int main() {
 	Lots lot;
 	Lots *lots;
+	Sellers seller;
+	Sellers *sellers;
+
 	int size;
-	int choice;
+	int choose;
 	int n;
+	char gh[25];
+	bool flag = false;
+
 	do {
 		system("cls");
-		cout<<"MENU:\n1)Add to file\n2)Read from file\n3)Delete from file\n4)Exit\n";
-		cout<<"Enter your choice> ";
-		cin>>choice;
-		getchar();
-		
-		switch(choice) {
-			case 1: Lots lot;
-				inputLot(&lot);
-				addTofile(lot);
-				system("PAUSE");
-				break;
-			case 2:
-				lots = readFromFile(&size);
-				for(int i=0; i<size ; i++) {
-					printLots(lots[i], i+1);
+		cout<<"MENU:\n1)Add LOT to file\n2)Add SELLER to file\n3)Read from LOTS file\n4)Read from SELLERS file\n5)Delete from file\n6)Exit\n";
+
+
+		do {
+			cout<<"Enter your choose> ";
+			cin.getline(gh,25);
+			for (int i=0; i<strlen(gh); i++){
+				if (isdigit(gh[i])){
+					flag = true;
+				} else {
+					flag = false;
+					break;
 				}
-				system("PAUSE");
-				break;
+			}
+			if (flag){
+				int n = atoi(gh);
+				choose = n;
+			}
+		} while(!flag);	
 
-			case 3: 
-				lots = readFromFile(&size);
-				for(int i=0; i<size ; i++) {
-					printLots(lots[i], i+1);
-				}
-				deleteFromFile();
-				system("PAUSE");
-						break;
 
-			case 4: cout<<"bye bye!\n";
-				break;
-			default: cout<<"Incorrect number, try again!";
+		switch(choose) {
 
+		case 1: Lots lot;
+			inputLot(&lot);
+			addToFileLot(lot);
+			system("PAUSE");
+			break;
+		case 2: Sellers seller;
+			inputSeller(&seller);
+			addToFileSeller(seller);
+			system("PAUSE");
+			break;
+		case 3:
+			lots = readFromFileLots(&size);
+			for(int i=0; i<size ; i++) {
+				printLots(lots[i], i+1);
+			}
+			system("PAUSE");
+			break;
+
+		case 4: 
+			sellers = readFromFileSellers(&size);
+			for(int i=0; i<size; i++){
+				printSellers(sellers[i], i+1);
+			}
+			system("PAUSE");
+			break;
+
+		case 5: 
+			lots = readFromFileLots(&size);
+			for(int i=0; i<size ; i++) {
+				printLots(lots[i], i+1);
+			}
+			deleteFromFile();
+			system("PAUSE");
+			break;
+
+		case 6: cout<<"bye bye!\n";
+			return 0;
+			break;
+		default: cout<<"Incorrect number, try again!";
 		}
-	}
-	while(choice!=4);
+
+	} 
+	while(choose!=5);
 
 	system("PAUSE");
 	return 0;

@@ -1,7 +1,4 @@
-/* заголовочный файл
-описание типов
-и заголовки функций*/
-
+//---//
 struct Lots {
 	char lotName[25];
 	float price;
@@ -9,9 +6,20 @@ struct Lots {
 	char date[20];
 };
 
+struct Sellers {
+	char name[25];
+	char lastName[25];
+	int phone;
+	char mail[30];
+};
+
 void inputLot(Lots * lot);
+void inputSeller(Sellers * seller);
 void printLots(Lots lot,int i);
-void addTofile(Lots lot);
+void printSellers(Sellers sellers, int i);
+void addToFileLot(Lots lot);
+void addToFileSeller(Sellers seller);
 void deleteFromFile();
-Lots * readFromFile(int *size);
+Lots * readFromFileLots(int *size);
+Sellers * readFromFileSellers(int *size);
 

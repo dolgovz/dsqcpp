@@ -5,6 +5,8 @@
 #include"Lots.h"
 using namespace std;
 void inputLot(Lots *lot) {
+char d[25];
+bool flag = false;
 	do{
 		cout<<"Enter lot name:"<<endl;
 		cin.getline(lot->lotName,25);
@@ -13,9 +15,24 @@ void inputLot(Lots *lot) {
 		}
 	}
 	while(isdigit(lot->lotName[0])); 
-	cout<<"Enter price:";
-	cin>>lot->price;
-	getchar();
+
+	do{
+		cout<<"Enter price:";
+		cin.getline(d,25);
+		for (int i=0; i<strlen(d); i++){
+			if (isdigit(d[i])){
+				flag = true;
+			}
+			else {
+				flag = false;
+				break;
+			}
+		}
+		if (flag){
+			int n = atoi(d);
+			lot->price = n;
+		}
+	} while(!flag);
 
 	do{
 		cout<<"Enter seller name:";
@@ -32,11 +49,29 @@ void inputLot(Lots *lot) {
 	strcpy(lot->date, dt);
 }
 
+void inputSeller(Sellers * seller){
+	cout<<"Enter seller name:"<<endl;
+	cin.getline(seller->name, 25);
+	
+	cout<<"Enter seller lastname:";
+	cin.getline(seller->lastName, 25);
+
+	cout<<"Enter seller phone number:";
+	cin>>seller->phone;
+		getchar();
+	cout<<"Enter seller mail:";
+	cin.getline(seller->mail, 30);
+}
+
 void printLots(Lots lots, int i) {
 	cout<<i<<" Lot name: "<<lots.lotName<<" Price: "<<lots.price<<" Seller: "<<lots.seller<<" Date:"<<lots.date<<endl;
 };
 
-void addTofile(Lots lot) {
+void printSellers(Sellers sellers, int i) {
+	cout<<i<<" Name: "<<sellers.name<<" Lastname: "<<sellers.lastName<<" Phone: "<<sellers.phone<<" Mail: "<<sellers.mail<<endl;
+};
+
+void addToFileLot(Lots lot) {
 	ofstream f("lots.dev",ios::binary|ios::app);
 	if(!f) {
 		f.open("lots.dev",ios::binary);
@@ -45,7 +80,16 @@ void addTofile(Lots lot) {
 	f.close();
 }
 
-Lots * readFromFile(int *size) {
+void addToFileSeller(Sellers seller){
+	ofstream f("sellers.dev",ios::binary|ios::app);
+	if(!f){
+	f.open("sellers.dev",ios::binary);	
+	}
+	f.write((char *)&seller,sizeof(Sellers));
+	f.close();
+}
+
+Lots * readFromFileLots(int *size) {
 	ifstream f ("lots.dev",ios::binary);
 	if(!f) {
 		cout<<"Error with file\n";
@@ -61,6 +105,28 @@ Lots * readFromFile(int *size) {
 		return lots;
 	}
 }
+
+Sellers * readFromFileSellers(int *size){
+	ifstream f ("sellers.dev", ios::binary);
+	if (!f){
+		cout<<"Error with file\n";
+		*size=0;
+		return NULL;
+	}
+	else {
+	f.seekg(0,ios::end);
+	*size=f.tellg()/sizeof(Sellers);
+	f.seekg(0,ios::beg);
+	Sellers *sellers=new Sellers[*size];
+	f.read((char *)sellers,*size*sizeof(Sellers));
+	f.close();
+	return sellers;
+	
+	}
+		
+
+}
+
 
 void deleteFromFile(){
 	int size;
@@ -83,7 +149,7 @@ void deleteFromFile(){
 	} while(n-1>=size || n-1<0);
 
 	
-	lots = readFromFile(&size);
+	lots = readFromFileLots(&size);
 	ofstream g("lots.dev",ios::binary);
 	for (int i = 0; i < size; i++) {
 		if(i != n-1) {
