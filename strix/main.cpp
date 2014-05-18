@@ -17,6 +17,7 @@ int main() {
 
 	do {
 		system("cls");
+
 		cout<<"--- LOTS MENU ---\n1)Add LOT to file\n2)Read LOTS from file\n3)Search LOT\n4)Delete LOT from file\n--- SELLERS MENU ---\n5)Add SELLER to file\n6)Read SELLERS from file\n7)Search SELLER\n8)Delete SELLER from file\n9)Exit\n";
 
 
@@ -49,6 +50,7 @@ int main() {
 			//2)Read from LOTS file
 		case 2:
 			lots = readFromFileLots(&size);
+			lotsTablePrint();
 			for(int i=0; i<size ; i++) {
 				printLots(lots[i], i+1);
 			}
@@ -56,14 +58,75 @@ int main() {
 			do {
 				cout<<"do you want to add seller(y/n):";
 				cin.getline(yn,25);
-			}while(yn[0] != 'y' || yn[0] !='n' || strlen(yn)>1);
+			}while((yn[0] != 'y' && yn[0] !='n') || strlen(yn)>1);
 
+			if (yn[0] == 'y') {
+				lots = readFromFileLots(&size);
+				int lotsSize = size;
+				char d[25];
+				int sellerNumber;
+				int lotNumber;
+				char text[25] = "\nChoose Lot number: ";
+				lotNumber = chooseNumberValidation(d,flag,lotsSize);
+
+				sellers = readFromFileSellers(&size);
+				int sellerSize = size;
+				sellersTablePrint();
+				if (sellerSize < 1){
+					do {
+						cout<<"Firstly you have to add seller.\nDo you want to do it now? y/n";
+						cin.getline(yn,25);
+					}
+					while((yn[0] != 'y' && yn[0] !='n') || strlen(yn)>1);
+					if (yn[0] == 'y') {
+						Sellers seller;
+						inputSeller(&seller);
+						addToFileSeller(seller);
+						sellers = readFromFileSellers(&size);
+						int sellerSize = size;
+						sellersTablePrint();
+						for(int i=0; i<size; i++){
+							printSellers(sellers[i], i+1);
+						}
+						sellerNumber = chooseNumberValidation(d,flag,sellerSize);
+					strcpy(lots[lotNumber-1].seller,sellers[sellerNumber-1].date);
+					ofstream f("lots.dev",ios::binary);
+					if(!f) {
+						f.open("lots.dev",ios::binary);
+					}
+					for(int i = 0; i<lotsSize ; i++){
+						f.write((char *)&lots[i],sizeof(Lots));
+					}
+
+					f.close();
+						system("PAUSE");
+						break;
+					}
+
+				} else {
+					for(int i=0; i<sellerSize ; i++) {
+						printSellers(sellers[i], i+1);
+					}
+					sellerNumber = chooseNumberValidation(d,flag,sellerSize);
+					strcpy(lots[lotNumber-1].seller,sellers[sellerNumber-1].date);
+					ofstream f("lots.dev",ios::binary);
+					if(!f) {
+						f.open("lots.dev",ios::binary);
+					}
+					for(int i = 0; i<lotsSize ; i++){
+						f.write((char *)&lots[i],sizeof(Lots));
+					}
+
+					f.close();
+				}
+			} 
 
 			system("PAUSE");
 			break;
 			//3)Search LOTS
 		case 3:
 			lots = readFromFileLots(&size);
+			lotsTablePrint();
 			for(int i=0; i<size ; i++) {
 				printLots(lots[i], i+1);
 			}
@@ -74,9 +137,9 @@ int main() {
 			getchar();
 			switch(chooseSearch) {
 			case 1:
-
-			cout<<"Enter search lot name: ";
-			cin.getline(searchText,25);
+				cout<<"Enter search lot name: ";
+				cin.getline(searchText,25);
+				lotsTablePrint();
 				for(int i=0; i<size ; i++) {
 					bool g = strstr(lots[i].lotName,searchText);
 					if(g) {
@@ -88,6 +151,7 @@ int main() {
 			case 2:
 				cout<<"Enter search price: ";
 				cin.getline(searchText,25);
+				lotsTablePrint();
 				for(int i=0; i<size ; i++) {
 					char str[25];
 					bool g = strstr(itoa(lots[i].price, str, 10),searchText);
@@ -100,6 +164,7 @@ int main() {
 			case 3:
 				cout<<"Enter seller name: ";
 				cin.getline(searchText,25);
+				lotsTablePrint();
 				for(int i=0; i<size ; i++) {
 					char str[25];
 					bool g = strstr(lots[i].seller,searchText);
@@ -112,6 +177,7 @@ int main() {
 			case 4:
 				cout<<"Enter date: ";
 				cin.getline(searchText,25);
+				lotsTablePrint();
 				for(int i=0; i<size ; i++) {
 					char str[25];
 					bool g = strstr(lots[i].date,searchText);
@@ -128,6 +194,7 @@ int main() {
 			//4)Delete from LOTS file
 		case 4: 
 			lots = readFromFileLots(&size);
+			lotsTablePrint();
 			for(int i=0; i<size ; i++) {
 				printLots(lots[i], i+1);
 			}
@@ -146,6 +213,7 @@ int main() {
 			//6)Read from SELLERS file
 		case 6: 
 			sellers = readFromFileSellers(&size);
+			sellersTablePrint();
 			for(int i=0; i<size; i++){
 				printSellers(sellers[i], i+1);
 			}

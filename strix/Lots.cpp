@@ -29,11 +29,12 @@ void inputLot(Lots *lot) {
 		}
 	} while(!flag);
 
-	strcpy(lot->seller, "");
+	strcpy(lot->seller, "#");
 
 	//DateTime Now
 	time_t now = time(0);
 	char* dt = ctime(&now);
+	strftime(dt, 20, "%Y-%m-%d %H:%M:%S", localtime(&now));
 	strcpy(lot->date, dt);
 }
 
@@ -100,16 +101,97 @@ void inputSeller(Sellers * seller){
 	//DateTime Now
 	time_t now = time(0);
 	char* dt = ctime(&now);
+	strftime(dt, 20, "%Y-%m-%d %H:%M:%S", localtime(&now));
 	strcpy(seller->date, dt);
 }
-
+void lotsTablePrint() {
+	cout <<setw(4);
+			cout<<"Id|";
+			cout <<setw(10);
+			cout<<"Lot name|";
+			cout <<setw(10);
+			cout<<"Price|";
+			cout <<setw(10);
+			cout<<"Seller|";
+			cout <<setw(30);
+			cout<<"Date\n";
+			cout<<"---------------------------------------------------------------\n";
+}
+void sellersTablePrint() {
+	cout <<setw(4);
+			cout<<"Id|";
+			cout <<setw(10);
+			cout<<"Name|";
+			cout <<setw(10);
+			cout<<"Surname|";
+			cout <<setw(10);
+			cout<<"Phone|";
+			cout <<setw(30);
+			cout<<"Email\n";
+			cout<<"---------------------------------------------------------------\n";
+}
 void printLots(Lots lots, int i) {
-	cout<<i<<" Lot name: "<<lots.lotName<<" Price: "<<lots.price<<" Seller: "<<lots.seller<<" Date:"<<lots.date<<endl;
+	int size;
+	char sellerName[25] = "";
+	Sellers *sellers = readFromFileSellers(&size);
+	for (int i = 0; i<size; i++) {
+		char *g = strstr(sellers[i].date,lots.seller);
+		if (g) {
+			strcpy(sellerName,sellers[i].name);
+		}
+	}
+		    cout <<setw(3);
+			cout<<i<<"|";
+			cout <<setw(9);
+			cout<<lots.lotName<<"|";
+			cout <<setw(9);
+			cout<<lots.price<<"|";
+			cout <<setw(9);
+			cout<<sellerName<<"|";
+			cout <<setw(30);
+			cout<<lots.date<<endl;
 };
 
 void printSellers(Sellers sellers, int i) {
-	cout<<i<<" Name: "<<sellers.name<<" Lastname: "<<sellers.lastName<<" Phone: "<<sellers.phone<<" Mail: "<<sellers.mail<<endl;
+			cout <<setw(3);
+			cout<<i<<"|";
+			cout <<setw(9);
+			cout<<sellers.name<<"|";
+			cout <<setw(9);
+			cout<<sellers.lastName<<"|";
+			cout <<setw(9);
+			cout<<sellers.phone<<"|";
+			cout <<setw(30);
+			cout<<sellers.mail<<endl;
+
 };
+int chooseNumberValidation(char *d,bool flag,int size) {
+	int number;
+	do{
+		cout<<"\nChoose number: ";
+		cin.getline(d,25);
+		for (int i=0; i<strlen(d); i++){
+			if (isdigit(d[i])){
+				flag = true;
+			}
+			else {
+				flag = false;
+				break;
+			}
+		}
+		if (flag){
+			int n = atoi(d);
+			if (n<=size&&n>0) {
+				flag = true;
+				number = n;
+			} else {
+				flag = false;
+			}
+		}
+	} while(!flag);
+	return number;
+}
+
 
 void addToFileLot(Lots lot) {
 	ofstream f("lots.dev",ios::binary|ios::app);
@@ -119,7 +201,14 @@ void addToFileLot(Lots lot) {
 	f.write((char *)&lot,sizeof(Lots));
 	f.close();
 }
-
+void rewriteLot(Lots lot) {
+	ofstream f("lots.dev",ios::binary);
+	if(!f) {
+		f.open("lots.dev",ios::binary);
+	}
+	f.write((char *)&lot,sizeof(Lots));
+	f.close();
+}
 void addToFileSeller(Sellers seller){
 	ofstream f("sellers.dev",ios::binary|ios::app);
 	if(!f){

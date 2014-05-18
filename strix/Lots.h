@@ -2,15 +2,13 @@
 #include<iostream>
 #include<fstream>
 #include <ctime>
-#include <regex>
+#include <iomanip>
 using namespace std;
 struct Lots {
 	char lotName[50];
-	float price;
+	int price;
 	char seller[20];
-	char sellerId[20];
 	char date[20];
-	
 };
 
 struct Sellers {
@@ -20,7 +18,10 @@ struct Sellers {
 	char mail[30];
 	char date[20];
 };
-
+void rewriteLot(Lots lot);
+void lotsTablePrint();
+void sellersTablePrint();
+int chooseNumberValidation(char *d,bool flag,int size);
 void inputLot(Lots * lot);
 void inputSeller(Sellers * seller);
 void printLots(Lots lot,int i);
