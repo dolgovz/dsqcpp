@@ -13,13 +13,13 @@ int main() {
 	int choose;
 	int n;
 	char gh[25];
+	int lotSize;
 	bool flag = false;
 
 	do {
 		system("cls");
 
 		cout<<"--- LOTS MENU ---\n1)Add LOT to file\n2)Read LOTS from file\n3)Search LOT\n4)Delete LOT from file\n--- SELLERS MENU ---\n5)Add SELLER to file\n6)Read SELLERS from file\n7)Search SELLER\n8)Delete SELLER from file\n9)Exit\n";
-
 
 		do {
 			cout<<"Enter your choose> ";
@@ -164,15 +164,28 @@ int main() {
 				break;
 			case 3:
 				cout<<"Enter seller name: ";
+				lotSize = size;
+				sellers = readFromFileSellers(&size);
 				cin.getline(searchText,25);
 				lotsTablePrint();
-				for(int i=0; i<size ; i++) {
-					char str[25];
-					bool g = strstr(lots[i].seller,searchText);
+
+				for(int j = 0;j<size; j++){
+					bool g = strstr(sellers[j].name,searchText);
 					if(g) {
+						for(int i=0; i<lotSize ; i++) {
+							bool z = strstr(lots[i].seller,sellers[j].date);
+							if(z) {
+								printLots(lots[i], i+1);
+							}
+						}
+					}
+				}
+				/*for(int i=0; i<lotSize ; i++) {
+					bool z = strstr(lots[i].seller,searchText);
+					if(z) {
 						printLots(lots[i], i+1);
 					}
-				}	
+				}	*/
 				system("PAUSE");
 				break;
 			case 4:
