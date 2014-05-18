@@ -1,29 +1,24 @@
-﻿Build started 18.05.2014 14:52:57.
+﻿Build started 18.05.2014 15:38:23.
      1>Project "C:\Users\Edgar\Documents\Visual Studio 2010\Projects\dsqcpp\strix\strix.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\strix.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Lots.cpp
-         Lots.cpp
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(18): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(29): warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(33): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(37): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\time.inl(86) : see declaration of 'ctime'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(38): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(47): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(62): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(79): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(103): warning C4996: 'ctime': This function or variable may be unsafe. Consider using ctime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\time.inl(86) : see declaration of 'ctime'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(104): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(141): warning C4244: '=' : conversion from 'std::streamoff' to 'int', possible loss of data
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(159): warning C4244: '=' : conversion from 'std::streamoff' to 'int', possible loss of data
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(177): warning C4244: '=' : conversion from 'std::streamoff' to 'int', possible loss of data
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(206): warning C4244: '=' : conversion from 'std::streamoff' to 'int', possible loss of data
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(26): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(72): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(113): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(125): warning C4244: 'argument' : conversion from 'float' to 'int', possible loss of data
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(125): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(125): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdlib.h(867) : see declaration of 'itoa'
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(137): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(149): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(14): warning C4101: 'n' : unreferenced local variable
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(7): warning C4101: 'lot' : unreferenced local variable
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(9): warning C4101: 'seller' : unreferenced local variable
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(136): warning C4101: 'str' : unreferenced local variable
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(148): warning C4101: 'str' : unreferenced local variable
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Edgar\Documents\Visual Studio 2010\Projects\dsqcpp\Debug\strix.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\strix.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Edgar\Documents\Visual Studio 2010\Projects\dsqcpp\Debug\strix.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Edgar\Documents\Visual Studio 2010\Projects\dsqcpp\Debug\strix.lib" /MACHINE:X86 Debug\Lots.obj
          Debug\main.obj
@@ -38,4 +33,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.30
+Time Elapsed 00:00:02.28

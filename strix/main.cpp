@@ -56,8 +56,41 @@ int main() {
 			do {
 				cout<<"do you want to add seller(y/n):";
 				cin.getline(yn,25);
-			}while(yn[0] != 'y' || yn[0] !='n' || strlen(yn)>1);
+			}while((yn[0] != 'y' && yn[0] !='n') || strlen(yn)>1);
 
+			if (yn[0] == 'y') {
+				cout<<"\nChoose Seller: "<<endl;
+				lots = readFromFileLots(&size);
+				for(int i=0; i<size ; i++) {
+					printLots(lots[i], i+1);
+				}
+				char d[25];
+				int sellerNumber;
+				do{
+					cout<<"\nEnter seller number: ";
+					cin.getline(d,25);
+					for (int i=0; i<strlen(d); i++){
+						if (isdigit(d[i])){
+							flag = true;
+						}
+						else {
+							flag = false;
+							break;
+						}
+					}
+					if (flag){
+						int n = atoi(d);
+						if (n<=size&&n>0) {
+							flag = true;
+							sellerNumber = n;
+						} else {
+						    flag = false;
+						}
+					}
+				} while(!flag);
+
+				
+			}
 
 			system("PAUSE");
 			break;
