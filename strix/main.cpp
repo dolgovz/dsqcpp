@@ -17,6 +17,7 @@ int main() {
 
 	do {
 		system("cls");
+		 
 		cout<<"--- LOTS MENU ---\n1)Add LOT to file\n2)Read LOTS from file\n3)Search LOT\n4)Delete LOT from file\n--- SELLERS MENU ---\n5)Add SELLER to file\n6)Read SELLERS from file\n7)Search SELLER\n8)Delete SELLER from file\n9)Exit\n";
 
 
@@ -49,6 +50,7 @@ int main() {
 			//2)Read from LOTS file
 		case 2:
 			lots = readFromFileLots(&size);
+			lotsTablePrint();
 			for(int i=0; i<size ; i++) {
 				printLots(lots[i], i+1);
 			}
@@ -59,35 +61,22 @@ int main() {
 			}while((yn[0] != 'y' && yn[0] !='n') || strlen(yn)>1);
 
 			if (yn[0] == 'y') {
-				cout<<"\nChoose Seller: "<<endl;
 				lots = readFromFileLots(&size);
-				for(int i=0; i<size ; i++) {
-					printLots(lots[i], i+1);
-				}
+				int lotsSize = size;
 				char d[25];
 				int sellerNumber;
-				do{
-					cout<<"\nEnter seller number: ";
-					cin.getline(d,25);
-					for (int i=0; i<strlen(d); i++){
-						if (isdigit(d[i])){
-							flag = true;
-						}
-						else {
-							flag = false;
-							break;
-						}
-					}
-					if (flag){
-						int n = atoi(d);
-						if (n<=size&&n>0) {
-							flag = true;
-							sellerNumber = n;
-						} else {
-						    flag = false;
-						}
-					}
-				} while(!flag);
+				int lotNumber;
+				char text[25] = "\nChoose Lot number: ";
+				lotNumber = chooseNumberValidation(d,flag,lotsSize);
+			
+				sellers = readFromFileSellers(&size);
+				int sellerSize = size;
+				sellersTablePrint();
+				for(int i=0; i<sellerSize ; i++) {
+					printSellers(sellers[i], i+1);
+				}
+				sellerNumber = chooseNumberValidation(d,flag,sellerSize);
+
 
 				
 			}
@@ -97,6 +86,7 @@ int main() {
 			//3)Search LOTS
 		case 3:
 			lots = readFromFileLots(&size);
+			lotsTablePrint();
 			for(int i=0; i<size ; i++) {
 				printLots(lots[i], i+1);
 			}
@@ -109,6 +99,7 @@ int main() {
 			case 1:
 				cout<<"Enter search lot name: ";
 				cin.getline(searchText,25);
+				lotsTablePrint();
 				for(int i=0; i<size ; i++) {
 					bool g = strstr(lots[i].lotName,searchText);
 					if(g) {
@@ -120,6 +111,7 @@ int main() {
 			case 2:
 				cout<<"Enter search price: ";
 				cin.getline(searchText,25);
+				lotsTablePrint();
 				for(int i=0; i<size ; i++) {
 					char str[25];
 					bool g = strstr(itoa(lots[i].price, str, 10),searchText);
@@ -132,6 +124,7 @@ int main() {
 			case 3:
 				cout<<"Enter seller name: ";
 				cin.getline(searchText,25);
+				lotsTablePrint();
 				for(int i=0; i<size ; i++) {
 					char str[25];
 					bool g = strstr(lots[i].seller,searchText);
@@ -144,6 +137,7 @@ int main() {
 			case 4:
 				cout<<"Enter date: ";
 				cin.getline(searchText,25);
+				lotsTablePrint();
 				for(int i=0; i<size ; i++) {
 					char str[25];
 					bool g = strstr(lots[i].date,searchText);
@@ -162,6 +156,7 @@ int main() {
 			//4)Delete from LOTS file
 		case 4: 
 			lots = readFromFileLots(&size);
+			lotsTablePrint();
 			for(int i=0; i<size ; i++) {
 				printLots(lots[i], i+1);
 			}
@@ -180,6 +175,7 @@ int main() {
 			//6)Read from SELLERS file
 		case 6: 
 			sellers = readFromFileSellers(&size);
+			sellersTablePrint();
 			for(int i=0; i<size; i++){
 				printSellers(sellers[i], i+1);
 			}
