@@ -16,7 +16,6 @@ struct Sellers {
 	char lastName[25];
 	int phone;
 	char mail[30];
-	char lotName[50];
 	char date[20];
 };
 void rewriteLot(Lots lot);
