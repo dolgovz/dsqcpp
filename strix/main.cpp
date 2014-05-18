@@ -17,7 +17,7 @@ int main() {
 
 	do {
 		system("cls");
-		cout<<"MENU:\n1)Add LOT to file\n2)Add SELLER to file\n3)Read from LOTS file\n4)search LOTS\n5)Read from SELLERS file\n6)search SELLERs\n7)Delete from LOTS file\n8)Delete from SELLERS file\n9)Exit\n";
+		cout<<"--- LOTS MENU ---\n1)Add LOT to file\n2)Read LOTS from file\n3)Search LOT\n4)Delete LOT from file\n--- SELLERS MENU ---\n5)Add SELLER to file\n6)Read SELLERS from file\n7)Search SELLER\n8)Delete SELLER from file\n9)Exit\n";
 
 
 		do {
@@ -39,18 +39,15 @@ int main() {
 
 
 		switch(choose) {
-
+//1)Add LOT to file
 		case 1: Lots lot;
 			inputLot(&lot);
 			addToFileLot(lot);
 			system("PAUSE");
 			break;
-		case 2: Sellers seller;
-			inputSeller(&seller);
-			addToFileSeller(seller);
-			system("PAUSE");
-			break;
-		case 3:
+
+//2)Read from LOTS file
+			case 2:
 			lots = readFromFileLots(&size);
 			for(int i=0; i<size ; i++) {
 				printLots(lots[i], i+1);
@@ -64,7 +61,8 @@ int main() {
 
 			system("PAUSE");
 			break;
-		case 4:
+//3)Search LOTS
+			case 3:
 			lots = readFromFileLots(&size);
 			for(int i=0; i<size ; i++) {
 				printLots(lots[i], i+1);
@@ -98,16 +96,9 @@ int main() {
 			
 
 			break;
-		case 5: 
-			sellers = readFromFileSellers(&size);
-			for(int i=0; i<size; i++){
-				printSellers(sellers[i], i+1);
-			}
-			system("PAUSE");
-			break;
-		case 6:
-			break;
-		case 7: 
+
+//4)Delete from LOTS file
+		case 4: 
 			lots = readFromFileLots(&size);
 			for(int i=0; i<size ; i++) {
 				printLots(lots[i], i+1);
@@ -115,6 +106,28 @@ int main() {
 			deleteFromFileLots();
 			system("PAUSE");
 			break;
+
+		
+//5)Add SELLER to file
+		case 5: Sellers seller;
+			inputSeller(&seller);
+			addToFileSeller(seller);
+			system("PAUSE");
+			break;
+
+//6)Read from SELLERS file
+		case 6: 
+			sellers = readFromFileSellers(&size);
+			for(int i=0; i<size; i++){
+				printSellers(sellers[i], i+1);
+			}
+			system("PAUSE");
+			break;
+//7)Search SELLERS
+		case 7:
+			break;
+
+//8)Delete from SELLERS file
 		case 8: sellers = readFromFileSellers(&size);
 			for(int i=0; i<size; i++){
 				printSellers(sellers[i], i+1);
@@ -122,6 +135,7 @@ int main() {
 			deleteFromFileSellers();
 			system("PAUSE");
 			break;
+//9)Exit
 		case 9: cout<<"bye bye!\n";
 			return 0;
 			break;
