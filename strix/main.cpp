@@ -17,7 +17,7 @@ int main() {
 
 	do {
 		system("cls");
-		cout<<"MENU:\n1)Add LOT to file\n2)Add SELLER to file\n3)Read from LOTS file\n4)Read from SELLERS file\n5)Delete from file\n6)Exit\n";
+		cout<<"MENU:\n1)Add LOT to file\n2)Add SELLER to file\n3)Read from LOTS file\n4)search LOTS\n5)Read from SELLERS file\n6)search SELLERs\n7)Delete from LOTS file\n8)Delete from SELLERS file\n9)Exit\n";
 
 
 		do {
@@ -55,34 +55,81 @@ int main() {
 			for(int i=0; i<size ; i++) {
 				printLots(lots[i], i+1);
 			}
+			char yn[25];
+			do {
+				cout<<"do you want to add seller(y/n):";
+				cin.getline(yn,25);
+			}while(yn[0] != 'y' || yn[0] !='n' || strlen(yn)>1);
+			
+
 			system("PAUSE");
 			break;
+		case 4:
+			lots = readFromFileLots(&size);
+			for(int i=0; i<size ; i++) {
+				printLots(lots[i], i+1);
+			}
+			cout<<"choose your category:\n 1)lot name 2)price 3)seller 4)date"<<endl;
+			int chooseSearch;
+			cin>>chooseSearch;
+			char searchText[25];
+			cin.getline(searchText,25);
+			getchar();
+			getchar();
+			switch(chooseSearch) {
+			case 1:
+				lots = readFromFileLots(&size);
+				for(int i=0; i<size ; i++) {
+					bool g = strstr(lots[i].lotName,searchText);
+					if(strstr(lots[i].lotName,searchText)  != NULL) {
+						printLots(lots[i], i+1);
+					}
+				}	
+				system("PAUSE");
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			
+			}
+			
 
-		case 4: 
+			break;
+		case 5: 
 			sellers = readFromFileSellers(&size);
 			for(int i=0; i<size; i++){
 				printSellers(sellers[i], i+1);
 			}
 			system("PAUSE");
 			break;
-
-		case 5: 
+		case 6:
+			break;
+		case 7: 
 			lots = readFromFileLots(&size);
 			for(int i=0; i<size ; i++) {
 				printLots(lots[i], i+1);
 			}
-			deleteFromFile();
+			deleteFromFileLots();
 			system("PAUSE");
 			break;
-
-		case 6: cout<<"bye bye!\n";
+		case 8: sellers = readFromFileSellers(&size);
+			for(int i=0; i<size; i++){
+				printSellers(sellers[i], i+1);
+			}
+			deleteFromFileSellers();
+			system("PAUSE");
+			break;
+		case 9: cout<<"bye bye!\n";
 			return 0;
 			break;
 		default: cout<<"Incorrect number, try again!";
 		}
 
 	} 
-	while(choose!=5);
+	while(choose!=9);
 
 	system("PAUSE");
 	return 0;

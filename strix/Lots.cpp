@@ -1,12 +1,8 @@
 /*  описаны тела функций, заголовки которых указаны в файле firm.h */
-#include<iostream>
-#include<fstream>
-#include <ctime>
 #include"Lots.h"
-using namespace std;
-void inputLot(Lots *lot) {
-char d[25];
 bool flag = false;
+void inputLot(Lots *lot) {
+	char d[25];
 	do{
 		cout<<"Enter lot name:"<<endl;
 		cin.getline(lot->lotName,25);
@@ -34,33 +30,77 @@ bool flag = false;
 		}
 	} while(!flag);
 
-	do{
-		cout<<"Enter seller name:";
-		cin.getline(lot->seller,20);
-		if(isdigit(lot->seller[0])){
-			cout<<"First symbol must be a letter\n";
-		}
-	}
-	while(isdigit(lot->seller[0]));
-	
+
 	//DateTime Now
 	time_t now = time(0);
-    char* dt = ctime(&now);
+	char* dt = ctime(&now);
 	strcpy(lot->date, dt);
 }
 
-void inputSeller(Sellers * seller){
-	cout<<"Enter seller name:"<<endl;
-	cin.getline(seller->name, 25);
-	
-	cout<<"Enter seller lastname:";
-	cin.getline(seller->lastName, 25);
 
-	cout<<"Enter seller phone number:";
-	cin>>seller->phone;
-		getchar();
+void inputSeller(Sellers * seller){
+	
+	do{
+		cout<<"Enter seller name:"<<endl;
+		cin.getline(seller->name,25);
+		for (int i=0; i<strlen(seller->name); i++){
+			if (!isdigit(seller->name[i])){
+				flag = true;
+			}
+			else {
+				flag = false;
+				break;
+			}
+		}
+		
+	} while(!flag);
+
+	do{
+		cout<<"Enter seller lastname:";
+		cin.getline(seller->lastName,25);
+		for (int i=0; i<strlen(seller->lastName); i++){
+			if (!isdigit(seller->lastName[i])){
+				flag = true;
+			}
+			else {
+				flag = false;
+				break;
+			}
+		}
+
+	} while(!flag);
+
+	do{
+		char d[25];
+		cout<<"Enter seller phone number:";
+		cin.getline(d,25);
+		if(strlen(d)==8 && d[0]=='2') {
+			for (int i=0; i<strlen(d); i++){
+				if (isdigit(d[i])){
+					flag = true;
+				}
+				else {
+					flag = false;
+					break;
+				}
+			}
+			if (flag){
+				int n = atoi(d);
+				seller->phone = n;
+			}
+		} else {
+			flag = false;
+		}
+
+	} while(!flag);
+
 	cout<<"Enter seller mail:";
 	cin.getline(seller->mail, 30);
+
+	//DateTime Now
+	time_t now = time(0);
+	char* dt = ctime(&now);
+	strcpy(seller->date, dt);
 }
 
 void printLots(Lots lots, int i) {
@@ -83,7 +123,7 @@ void addToFileLot(Lots lot) {
 void addToFileSeller(Sellers seller){
 	ofstream f("sellers.dev",ios::binary|ios::app);
 	if(!f){
-	f.open("sellers.dev",ios::binary);	
+		f.open("sellers.dev",ios::binary);	
 	}
 	f.write((char *)&seller,sizeof(Sellers));
 	f.close();
@@ -114,21 +154,18 @@ Sellers * readFromFileSellers(int *size){
 		return NULL;
 	}
 	else {
-	f.seekg(0,ios::end);
-	*size=f.tellg()/sizeof(Sellers);
-	f.seekg(0,ios::beg);
-	Sellers *sellers=new Sellers[*size];
-	f.read((char *)sellers,*size*sizeof(Sellers));
-	f.close();
-	return sellers;
-	
+		f.seekg(0,ios::end);
+		*size=f.tellg()/sizeof(Sellers);
+		f.seekg(0,ios::beg);
+		Sellers *sellers=new Sellers[*size];
+		f.read((char *)sellers,*size*sizeof(Sellers));
+		f.close();
+		return sellers;
 	}
-		
-
 }
 
 
-void deleteFromFile(){
+void deleteFromFileLots(){
 	int size;
 	ifstream f ("lots.dev",ios::binary);
 	if(!f) {
@@ -139,16 +176,14 @@ void deleteFromFile(){
 		size=f.tellg()/sizeof(Lots);
 	}
 	f.close();
-	
 	int n;
 	Lots *lots=new Lots[size];
-	
 	do {
 		cout<<"Enter lot number:";
-	    cin>>n;
+		cin>>n;
 	} while(n-1>=size || n-1<0);
 
-	
+
 	lots = readFromFileLots(&size);
 	ofstream g("lots.dev",ios::binary);
 	for (int i = 0; i < size; i++) {
@@ -159,4 +194,32 @@ void deleteFromFile(){
 	g.close();
 }
 
+void deleteFromFileSellers(){
+	int size;
+	ifstream f ("sellers.dev",ios::binary);
+	if(!f) {
+		cout<<"Error with file\n";
+		size=0;
+	} else {
+		f.seekg(0,ios::end);
+		size=f.tellg()/sizeof(Sellers);
+	}
+	f.close();
+	int n;
+	Sellers *sellers=new Sellers[size];
 
+	do {
+		cout<<"Enter seller number:";
+		cin>>n;
+	} while(n-1>=size || n-1<0);
+
+
+	sellers = readFromFileSellers(&size);
+	ofstream g("sellers.dev",ios::binary);
+	for (int i = 0; i < size; i++) {
+		if(i != n-1) {
+			g.write((char *)&sellers[i],sizeof(Sellers));
+		}
+	}
+	g.close();
+}

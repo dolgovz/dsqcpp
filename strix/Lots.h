@@ -1,9 +1,15 @@
 //---//
+#include<iostream>
+#include<fstream>
+#include <ctime>
+#include <regex>
+using namespace std;
 struct Lots {
 	char lotName[25];
 	float price;
 	char seller[20];
 	char date[20];
+	char sellerId[20];
 };
 
 struct Sellers {
@@ -11,6 +17,7 @@ struct Sellers {
 	char lastName[25];
 	int phone;
 	char mail[30];
+	char date[20];
 };
 
 void inputLot(Lots * lot);
@@ -19,7 +26,8 @@ void printLots(Lots lot,int i);
 void printSellers(Sellers sellers, int i);
 void addToFileLot(Lots lot);
 void addToFileSeller(Sellers seller);
-void deleteFromFile();
+void deleteFromFileLots();
+void deleteFromFileSellers();
 Lots * readFromFileLots(int *size);
 Sellers * readFromFileSellers(int *size);
 
