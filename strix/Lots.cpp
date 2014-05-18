@@ -153,6 +153,15 @@ void printLots(Lots lots, int i) {
 };
 
 void printSellers(Sellers sellers, int i) {
+	int size;
+	char lotName[50] = "";
+	Lots *lots = readFromFileLots(&size);
+	for (int i = 0; i<size; i++) {
+		char *g = strstr(lots[i].date,sellers.lotName);
+		if (g) {
+			strcpy(lotName,lots[i].lotName);
+		}
+	}
 			cout <<setw(3);
 			cout<<i<<"|";
 			cout <<setw(9);
@@ -163,6 +172,8 @@ void printSellers(Sellers sellers, int i) {
 			cout<<sellers.phone<<"|";
 			cout <<setw(30);
 			cout<<sellers.mail<<endl;
+			cout <<setw(9);
+			cout<<sellers.lotName;
 
 };
 int chooseNumberValidation(char *d,bool flag,int size) {
