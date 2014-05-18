@@ -125,16 +125,17 @@ int main() {
 			break;
 			//3)Search LOTS
 		case 3:
+			char d[25];
+			int chooseSearch;
+			char searchText[25];
 			lots = readFromFileLots(&size);
 			lotsTablePrint();
 			for(int i=0; i<size ; i++) {
 				printLots(lots[i], i+1);
 			}
 			cout<<"Choose your category:\n 1)lot name 2)price 3)seller 4)date"<<endl;
-			int chooseSearch;
-			char searchText[25];
-			cin>>chooseSearch;
-			getchar();
+			chooseSearch = chooseNumberValidation(d,flag,4);
+			
 			switch(chooseSearch) {
 			case 1:
 				cout<<"Enter search lot name: ";
@@ -221,6 +222,67 @@ int main() {
 			break;
 			//7)Search SELLERS
 		case 7:
+			sellers = readFromFileSellers(&size);
+			sellersTablePrint();
+			for(int i=0; i<size ; i++) {
+				printSellers(sellers[i], i+1);
+			}
+			cout<<"Choose your category:\n 1)Name 2)Lastname 3)Phone 4)Mail"<<endl;
+			chooseSearch = chooseNumberValidation(d,flag,4);
+
+			switch(chooseSearch) {
+			case 1:
+				cout<<"Enter search seller name: ";
+				cin.getline(searchText,25);
+				sellersTablePrint();
+				for(int i=0; i<size ; i++) {
+					bool g = strstr(sellers[i].name,searchText);
+					if(g) {
+						printSellers(sellers[i], i+1);
+					}
+				}	
+				system("PAUSE");
+				break;
+			case 2:
+				cout<<"Enter search seller lastName: ";
+				cin.getline(searchText,25);
+				sellersTablePrint();
+				for(int i=0; i<size ; i++) {
+					bool g = strstr(sellers[i].lastName,searchText);
+					if(g) {
+						printSellers(sellers[i], i+1);
+					}
+				}	
+				system("PAUSE");
+				break;
+			case 3:
+				cout<<"Enter search seller phone: ";
+				cin.getline(searchText,25);
+				sellersTablePrint();
+				for(int i=0; i<size ; i++) {
+					char str[25];
+					bool g = strstr(itoa(sellers[i].phone, str, 10),searchText);
+					if(g) {
+						printSellers(sellers[i], i+1);
+					}
+				}	
+				system("PAUSE");
+				break;
+			case 4:
+				cout<<"Enter search seller mail: ";
+				cin.getline(searchText,25);
+				sellersTablePrint();
+				for(int i=0; i<size ; i++) {
+					bool g = strstr(sellers[i].mail,searchText);
+					if(g) {
+						printSellers(sellers[i], i+1);
+					}
+				}	
+				system("PAUSE");
+				break;
+
+			}
+			system("PAUSE");
 			break;
 
 			//8)Delete from SELLERS file

@@ -1,4 +1,4 @@
-﻿Build started 18.05.2014 18:26:05.
+﻿Build started 18.05.2014 18:33:53.
      1>Project "C:\Users\Dolgov\documents\visual studio 2010\Projects\strix\strix\strix.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\strix.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -10,17 +10,23 @@
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
      1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(111): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(144): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(157): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(157): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+     1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(145): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(158): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(158): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdlib.h(867) : see declaration of 'itoa'
-     1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(170): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(183): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(171): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(184): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(239): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(251): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(264): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
+     1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(264): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdlib.h(867) : see declaration of 'itoa'
+     1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(276): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
      1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(14): warning C4101: 'n' : unreferenced local variable
      1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(7): warning C4101: 'lot' : unreferenced local variable
      1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(9): warning C4101: 'seller' : unreferenced local variable
-     1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(169): warning C4101: 'str' : unreferenced local variable
-     1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(182): warning C4101: 'str' : unreferenced local variable
+     1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(170): warning C4101: 'str' : unreferenced local variable
+     1>c:\users\dolgov\documents\visual studio 2010\projects\strix\strix\main.cpp(183): warning C4101: 'str' : unreferenced local variable
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Dolgov\documents\visual studio 2010\Projects\strix\Debug\strix.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\strix.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Dolgov\documents\visual studio 2010\Projects\strix\Debug\strix.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Dolgov\documents\visual studio 2010\Projects\strix\Debug\strix.lib" /MACHINE:X86 Debug\Lots.obj
          Debug\main.obj
@@ -35,4 +41,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.81
+Time Elapsed 00:00:00.87
