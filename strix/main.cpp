@@ -76,9 +76,16 @@ int main() {
 					printSellers(sellers[i], i+1);
 				}
 				sellerNumber = chooseNumberValidation(d,flag,sellerSize);
-
-
-				
+				strcpy(lots[lotNumber-1].seller,sellers[sellerNumber-1].date);
+				ofstream f("lots.dev",ios::binary);
+					if(!f) {
+						f.open("lots.dev",ios::binary);
+					}
+					for(int i = 0; i<lotsSize ; i++){
+						f.write((char *)&lots[i],sizeof(Lots));
+					}
+					
+				f.close();
 			}
 
 			system("PAUSE");

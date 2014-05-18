@@ -30,11 +30,12 @@ void inputLot(Lots *lot) {
 		}
 	} while(!flag);
 
-	strcpy(lot->seller, "");
+	strcpy(lot->seller, "#");
 
 	//DateTime Now
 	time_t now = time(0);
 	char* dt = ctime(&now);
+	strftime(dt, 20, "%Y-%m-%d %H:%M:%S", localtime(&now));
 	strcpy(lot->date, dt);
 }
 
@@ -101,6 +102,7 @@ void inputSeller(Sellers * seller){
 	//DateTime Now
 	time_t now = time(0);
 	char* dt = ctime(&now);
+	strftime(dt, 20, "%Y-%m-%d %H:%M:%S", localtime(&now));
 	strcpy(seller->date, dt);
 }
 void lotsTablePrint() {
@@ -130,6 +132,15 @@ void sellersTablePrint() {
 			cout<<"---------------------------------------------------------------\n";
 }
 void printLots(Lots lots, int i) {
+	int size;
+	char sellerName[25] = "";
+	Sellers *sellers = readFromFileSellers(&size);
+	for (int i = 0; i<size; i++) {
+		char *g = strstr(sellers[i].date,lots.seller);
+		if (g) {
+			strcpy(sellerName,sellers[i].name);
+		}
+	}
 		    cout <<setw(3);
 			cout<<i<<"|";
 			cout <<setw(9);
@@ -137,9 +148,9 @@ void printLots(Lots lots, int i) {
 			cout <<setw(9);
 			cout<<lots.price<<"|";
 			cout <<setw(9);
-			cout<<lots.seller<<"|";
+			cout<<sellerName<<"|";
 			cout <<setw(30);
-			cout<<lots.date;
+			cout<<lots.date<<endl;
 };
 
 void printSellers(Sellers sellers, int i) {
@@ -152,7 +163,7 @@ void printSellers(Sellers sellers, int i) {
 			cout <<setw(9);
 			cout<<sellers.phone<<"|";
 			cout <<setw(30);
-			cout<<sellers.mail;
+			cout<<sellers.mail<<endl;
 
 };
 int chooseNumberValidation(char *d,bool flag,int size) {
@@ -191,7 +202,14 @@ void addToFileLot(Lots lot) {
 	f.write((char *)&lot,sizeof(Lots));
 	f.close();
 }
-
+void rewriteLot(Lots lot) {
+	ofstream f("lots.dev",ios::binary);
+	if(!f) {
+		f.open("lots.dev",ios::binary);
+	}
+	f.write((char *)&lot,sizeof(Lots));
+	f.close();
+}
 void addToFileSeller(Sellers seller){
 	ofstream f("sellers.dev",ios::binary|ios::app);
 	if(!f){
