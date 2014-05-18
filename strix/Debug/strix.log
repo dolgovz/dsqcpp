@@ -1,7 +1,7 @@
-﻿Build started 18.05.2014 19:05:05.
+﻿Build started 18.05.2014 19:24:20.
      1>Project "C:\Users\Edgar\Documents\Visual Studio 2010\Projects\dsqcpp\strix\strix.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Touching "Debug\strix.unsuccessfulbuild".
+         Creating "Debug\strix.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
          main.cpp
@@ -41,4 +41,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.05
+Time Elapsed 00:00:01.93

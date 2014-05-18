@@ -105,7 +105,7 @@ void inputSeller(Sellers * seller){
 	strcpy(seller->date, dt);
 }
 void lotsTablePrint() {
-	cout <<setw(4);
+			cout <<setw(4);
 			cout<<"Id|";
 			cout <<setw(10);
 			cout<<"Lot name|";
