@@ -30,6 +30,7 @@ void inputLot(Lots *lot) {
 		}
 	} while(!flag);
 
+	strcpy(lot->seller, "");
 
 	//DateTime Now
 	time_t now = time(0);
@@ -39,7 +40,7 @@ void inputLot(Lots *lot) {
 
 
 void inputSeller(Sellers * seller){
-	
+
 	do{
 		cout<<"Enter seller name:"<<endl;
 		cin.getline(seller->name,25);
@@ -52,7 +53,7 @@ void inputSeller(Sellers * seller){
 				break;
 			}
 		}
-		
+
 	} while(!flag);
 
 	do{

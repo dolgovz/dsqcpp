@@ -1,4 +1,4 @@
-﻿Build started 18.05.2014 14:50:19.
+﻿Build started 18.05.2014 15:04:18.
      1>Project "C:\Users\Dolgov\documents\visual studio 2010\Projects\strix\strix\strix.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\strix.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -14,4 +14,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.04
+Time Elapsed 00:00:00.06
