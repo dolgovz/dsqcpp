@@ -39,15 +39,15 @@ int main() {
 
 
 		switch(choose) {
-//1)Add LOT to file
+			//1)Add LOT to file
 		case 1: Lots lot;
 			inputLot(&lot);
 			addToFileLot(lot);
 			system("PAUSE");
 			break;
 
-//2)Read from LOTS file
-			case 2:
+			//2)Read from LOTS file
+		case 2:
 			lots = readFromFileLots(&size);
 			for(int i=0; i<size ; i++) {
 				printLots(lots[i], i+1);
@@ -57,12 +57,12 @@ int main() {
 				cout<<"do you want to add seller(y/n):";
 				cin.getline(yn,25);
 			}while(yn[0] != 'y' || yn[0] !='n' || strlen(yn)>1);
-			
+
 
 			system("PAUSE");
 			break;
-//3)Search LOTS
-			case 3:
+			//3)Search LOTS
+		case 3:
 			lots = readFromFileLots(&size);
 			for(int i=0; i<size ; i++) {
 				printLots(lots[i], i+1);
@@ -74,8 +74,8 @@ int main() {
 			getchar();
 			switch(chooseSearch) {
 			case 1:
-			cout<<"Enter search lot name: ";
-			cin.getline(searchText,25);
+				cout<<"Enter search lot name: ";
+				cin.getline(searchText,25);
 				for(int i=0; i<size ; i++) {
 					bool g = strstr(lots[i].lotName,searchText);
 					if(g) {
@@ -120,13 +120,13 @@ int main() {
 				}
 				system("PAUSE");
 				break;
-			
+
 			}
-			
+
 
 			break;
 
-//4)Delete from LOTS file
+			//4)Delete from LOTS file
 		case 4: 
 			lots = readFromFileLots(&size);
 			for(int i=0; i<size ; i++) {
@@ -136,15 +136,15 @@ int main() {
 			system("PAUSE");
 			break;
 
-		
-//5)Add SELLER to file
+
+			//5)Add SELLER to file
 		case 5: Sellers seller;
 			inputSeller(&seller);
 			addToFileSeller(seller);
 			system("PAUSE");
 			break;
 
-//6)Read from SELLERS file
+			//6)Read from SELLERS file
 		case 6: 
 			sellers = readFromFileSellers(&size);
 			for(int i=0; i<size; i++){
@@ -152,11 +152,11 @@ int main() {
 			}
 			system("PAUSE");
 			break;
-//7)Search SELLERS
+			//7)Search SELLERS
 		case 7:
 			break;
 
-//8)Delete from SELLERS file
+			//8)Delete from SELLERS file
 		case 8: sellers = readFromFileSellers(&size);
 			for(int i=0; i<size; i++){
 				printSellers(sellers[i], i+1);
@@ -164,7 +164,7 @@ int main() {
 			deleteFromFileSellers();
 			system("PAUSE");
 			break;
-//9)Exit
+			//9)Exit
 		case 9: cout<<"bye bye!\n";
 			return 0;
 			break;
