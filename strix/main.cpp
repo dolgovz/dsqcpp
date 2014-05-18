@@ -74,13 +74,9 @@ int main() {
 			getchar();
 			switch(chooseSearch) {
 			case 1:
-<<<<<<< HEAD
+
 			cout<<"Enter search lot name: ";
 			cin.getline(searchText,25);
-=======
-				cout<<"Enter search lot name: ";
-				cin.getline(searchText,25);
->>>>>>> c9c6e362f02c9b86e844227de53284807384226d
 				for(int i=0; i<size ; i++) {
 					bool g = strstr(lots[i].lotName,searchText);
 					if(g) {
@@ -127,8 +123,6 @@ int main() {
 				break;
 
 			}
-
-
 			break;
 
 			//4)Delete from LOTS file

@@ -5,11 +5,12 @@
 #include <regex>
 using namespace std;
 struct Lots {
-	char lotName[25];
+	char lotName[50];
 	float price;
 	char seller[20];
-	char date[20];
 	char sellerId[20];
+	char date[20];
+	
 };
 
 struct Sellers {

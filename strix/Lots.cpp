@@ -1,11 +1,10 @@
-/*  описаны тела функций, заголовки которых указаны в файле firm.h */
 #include"Lots.h"
 bool flag = false;
 void inputLot(Lots *lot) {
 	char d[25];
 	do{
 		cout<<"Enter lot name:"<<endl;
-		cin.getline(lot->lotName,25);
+		cin.getline(lot->lotName,50);
 		if (isdigit(lot->lotName[0])){
 			cout<<"First symbol must be a letter\n";
 		}
