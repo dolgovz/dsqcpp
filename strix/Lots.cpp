@@ -118,7 +118,7 @@ void lotsTablePrint() {
 			cout<<"---------------------------------------------------------------\n";
 }
 void sellersTablePrint() {
-	cout <<setw(4);
+			cout <<setw(4);
 			cout<<"Id|";
 			cout <<setw(10);
 			cout<<"Name|";
@@ -126,8 +126,10 @@ void sellersTablePrint() {
 			cout<<"Surname|";
 			cout <<setw(10);
 			cout<<"Phone|";
-			cout <<setw(30);
-			cout<<"Email\n";
+			cout <<setw(18);
+			cout<<"Email|";
+			cout <<setw(12);
+			cout<<"Lot Name|\n";
 			cout<<"---------------------------------------------------------------\n";
 }
 void printLots(Lots lots, int i) {
@@ -153,6 +155,17 @@ void printLots(Lots lots, int i) {
 };
 
 void printSellers(Sellers sellers, int i) {
+
+		int size;
+	   char lotName[25] = "";
+	Lots *lots = readFromFileLots(&size);
+	for (int i = 0; i<size; i++) {
+		char *g = strstr(lots[i].seller,sellers.date);
+		if (g) {
+			strcpy(lotName,lots[i].lotName);
+		}
+	}
+
 			cout <<setw(3);
 			cout<<i<<"|";
 			cout <<setw(9);
@@ -161,8 +174,10 @@ void printSellers(Sellers sellers, int i) {
 			cout<<sellers.lastName<<"|";
 			cout <<setw(9);
 			cout<<sellers.phone<<"|";
-			cout <<setw(30);
-			cout<<sellers.mail<<endl;
+			cout <<setw(17);
+			cout<<sellers.mail<<"|";
+			cout <<setw(11);
+			cout<<lotName<<endl;
 
 };
 int chooseNumberValidation(char *d,bool flag,int size) {
