@@ -179,6 +179,7 @@ void printSellers(Sellers sellers, int i) {
 			cout <<setw(11);
 			cout<<lotName<<endl;
 
+
 };
 int chooseNumberValidation(char *d,bool flag,int size) {
 	int number;

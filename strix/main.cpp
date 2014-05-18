@@ -18,8 +18,9 @@ int main() {
 
 	do {
 		system("cls");
-			
+
 		cout<<"--------------------------\n        LOTS MENU         |\n--------------------------\n 1 | Add LOT to file\n 2 | Read LOTS from file\n 3 | Search LOT\n 4 | Delete LOT from file\n--------------------------\n       SELLERS MENU       |\n--------------------------\n 5 | Add SELLER to file\n 6 | Read SELLERS from file\n 7 | Search SELLER\n 8 | Delete SELLER from file\n--------------------------\n 9 | Exit                 |\n--------------------------\n";
+
 
 		do {
 			cout<<"Enter your choose> ";
