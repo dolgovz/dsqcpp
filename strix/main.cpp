@@ -181,12 +181,6 @@ int main() {
 						}
 					}
 				}
-				/*for(int i=0; i<lotSize ; i++) {
-					bool z = strstr(lots[i].seller,searchText);
-					if(z) {
-						printLots(lots[i], i+1);
-					}
-				}	*/
 				system("PAUSE");
 				break;
 			case 4:
