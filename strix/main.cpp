@@ -67,29 +67,58 @@ int main() {
 			for(int i=0; i<size ; i++) {
 				printLots(lots[i], i+1);
 			}
-			cout<<"choose your category:\n 1)lot name 2)price 3)seller 4)date"<<endl;
+			cout<<"Choose your category:\n 1)lot name 2)price 3)seller 4)date"<<endl;
 			int chooseSearch;
-			cin>>chooseSearch;
 			char searchText[25];
-			cin.getline(searchText,25);
-			getchar();
+			cin>>chooseSearch;
 			getchar();
 			switch(chooseSearch) {
 			case 1:
-				lots = readFromFileLots(&size);
+			cout<<"Enter search lot name: ";
+			cin.getline(searchText,25);
 				for(int i=0; i<size ; i++) {
 					bool g = strstr(lots[i].lotName,searchText);
-					if(strstr(lots[i].lotName,searchText)  != NULL) {
+					if(g) {
 						printLots(lots[i], i+1);
 					}
 				}	
 				system("PAUSE");
 				break;
 			case 2:
+				cout<<"Enter search price: ";
+				cin.getline(searchText,25);
+				for(int i=0; i<size ; i++) {
+					char str[25];
+					bool g = strstr(itoa(lots[i].price, str, 10),searchText);
+					if(g) {
+						printLots(lots[i], i+1);
+					}
+				}	
+				system("PAUSE");
 				break;
 			case 3:
+				cout<<"Enter seller name: ";
+				cin.getline(searchText,25);
+				for(int i=0; i<size ; i++) {
+					char str[25];
+					bool g = strstr(lots[i].seller,searchText);
+					if(g) {
+						printLots(lots[i], i+1);
+					}
+				}	
+				system("PAUSE");
 				break;
 			case 4:
+				cout<<"Enter date: ";
+				cin.getline(searchText,25);
+				for(int i=0; i<size ; i++) {
+					char str[25];
+					bool g = strstr(lots[i].date,searchText);
+					if(g) {
+						printLots(lots[i], i+1);
+					}
+				}
+				system("PAUSE");
 				break;
 			
 			}
