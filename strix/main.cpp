@@ -19,7 +19,7 @@ int main() {
 	do {
 		system("cls");
 
-		cout<<"--------------------------\n        LOTS MENU         |\n--------------------------\n 1 | Add LOT to file\n 2 | Read LOTS from file\n 3 | Search LOT\n 4 | Delete LOT from file\n--------------------------\n       SELLERS MENU       |\n--------------------------\n 5 | Add SELLER to file\n 6 | Read SELLERS from file\n 7 | Search SELLER\n 8 | Delete SELLER from file\n--------------------------\n 9 | Exit                 |\n--------------------------\n";
+		cout<<"--------------------------\n        LOTS MENU         |\n--------------------------\n 1 | Add LOT to file\n 2 | Read LOTS from file\n 3 | Search LOT\n 4 | Sort LOTS\n 5 | Delete LOT from file\n--------------------------\n       SELLERS MENU       |\n--------------------------\n 6 | Add SELLER to file\n 7 | Read SELLERS from file\n 8 | Search SELLER\n 9 | Sort LOTS\n 10 | Delete SELLER from file\n--------------------------\n 11 | Exit                 |\n--------------------------\n";
 
 
 		do {
@@ -90,16 +90,16 @@ int main() {
 							printSellers(sellers[i], i+1);
 						}
 						sellerNumber = chooseNumberValidation(d,flag,sellerSize);
-					strcpy(lots[lotNumber-1].seller,sellers[sellerNumber-1].date);
-					ofstream f("lots.dev",ios::binary);
-					if(!f) {
-						f.open("lots.dev",ios::binary);
-					}
-					for(int i = 0; i<lotsSize ; i++){
-						f.write((char *)&lots[i],sizeof(Lots));
-					}
+						strcpy(lots[lotNumber-1].seller,sellers[sellerNumber-1].date);
+						ofstream f("lots.dev",ios::binary);
+						if(!f) {
+							f.open("lots.dev",ios::binary);
+						}
+						for(int i = 0; i<lotsSize ; i++){
+							f.write((char *)&lots[i],sizeof(Lots));
+						}
 
-					f.close();
+						f.close();
 						system("PAUSE");
 						break;
 					}
@@ -136,7 +136,7 @@ int main() {
 			}
 			cout<<"Choose your category:\n 1)lot name 2)price 3)seller 4)date"<<endl;
 			chooseSearch = chooseNumberValidation(d,flag,4);
-			
+
 			switch(chooseSearch) {
 			case 1:
 				cout<<"Enter search lot name: ";
@@ -200,8 +200,10 @@ int main() {
 			}
 			break;
 
-			//4)Delete from LOTS file
-		case 4: 
+			//4)Sort lots
+		case 4:
+			//5)Delete from LOTS file
+		case 5: 
 			lots = readFromFileLots(&size);
 			lotsTablePrint();
 			for(int i=0; i<size ; i++) {
@@ -212,15 +214,15 @@ int main() {
 			break;
 
 
-			//5)Add SELLER to file
-		case 5: Sellers seller;
+			//6)Add SELLER to file
+		case 6: Sellers seller;
 			inputSeller(&seller);
 			addToFileSeller(seller);
 			system("PAUSE");
 			break;
 
-			//6)Read from SELLERS file
-		case 6: 
+			//7)Read from SELLERS file
+		case 7: 
 			sellers = readFromFileSellers(&size);
 			sellersTablePrint();
 			for(int i=0; i<size; i++){
@@ -228,8 +230,8 @@ int main() {
 			}
 			system("PAUSE");
 			break;
-			//7)Search SELLERS
-		case 7:
+			//8)Search SELLERS
+		case 8:
 			sellers = readFromFileSellers(&size);
 			sellersTablePrint();
 			for(int i=0; i<size ; i++) {
@@ -292,24 +294,25 @@ int main() {
 			}
 			system("PAUSE");
 			break;
-
-			//8)Delete from SELLERS file
-		case 8: sellers = readFromFileSellers(&size);
+			//9)Sort SELLERS
+		case 9:
+			//10)Delete from SELLERS file
+		case 10: sellers = readFromFileSellers(&size);
 			for(int i=0; i<size; i++){
 				printSellers(sellers[i], i+1);
 			}
 			deleteFromFileSellers();
 			system("PAUSE");
 			break;
-			//9)Exit
-		case 9: cout<<"bye bye!\n";
+			//11)Exit
+		case 11: cout<<"bye bye!\n";
 			return 0;
 			break;
 		default: cout<<"Incorrect number, try again!";
 		}
 
 	} 
-	while(choose!=9);
+	while(choose!=11);
 
 	system("PAUSE");
 	return 0;
