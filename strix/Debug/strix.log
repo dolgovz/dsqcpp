@@ -1,39 +1,12 @@
-﻿Build started 19.05.2014 14:14:43.
+﻿Build started 19.05.2014 17:17:24.
      1>Project "C:\Users\Edgar\Documents\Visual Studio 2010\Projects\dsqcpp\strix\strix.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\strix.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
-         main.cpp
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(28): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(93): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(112): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(146): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(159): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(159): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdlib.h(867) : see declaration of 'itoa'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(174): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(177): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(192): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(249): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(261): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(274): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(274): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\stdlib.h(867) : see declaration of 'itoa'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(286): warning C4800: 'char *' : forcing value to bool 'true' or 'false' (performance warning)
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(14): warning C4101: 'n' : unreferenced local variable
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(7): warning C4101: 'lot' : unreferenced local variable
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(9): warning C4101: 'seller' : unreferenced local variable
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\main.cpp(191): warning C4101: 'str' : unreferenced local variable
+         All outputs are up-to-date.
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Edgar\Documents\Visual Studio 2010\Projects\dsqcpp\Debug\strix.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\strix.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Edgar\Documents\Visual Studio 2010\Projects\dsqcpp\Debug\strix.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Edgar\Documents\Visual Studio 2010\Projects\dsqcpp\Debug\strix.lib" /MACHINE:X86 Debug\Lots.obj
-         Debug\main.obj
-     1>Lots.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/INCREMENTAL:NO' specification
+         All outputs are up-to-date.
          strix.vcxproj -> C:\Users\Edgar\Documents\Visual Studio 2010\Projects\dsqcpp\Debug\strix.exe
-       Manifest:
-         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Edgar\Documents\Visual Studio 2010\Projects\dsqcpp\Debug\strix.exe;#1" /manifest Debug\strix.exe.intermediate.manifest
        FinalizeBuildStatus:
          Deleting file "Debug\strix.unsuccessfulbuild".
          Touching "Debug\strix.lastbuildstate".
@@ -41,4 +14,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.48
+Time Elapsed 00:00:00.14

@@ -15,6 +15,7 @@ int main() {
 	char gh[25];
 	int lotSize;
 	bool flag = false;
+	int sortWay;
 
 	do {
 		system("cls");
@@ -202,6 +203,21 @@ int main() {
 
 			//4)Sort lots
 		case 4:
+			lots = readFromFileLots(&size);
+			lotsTablePrint();
+			
+			for(int i=0; i<size ; i++) {
+				printLots(lots[i], i+1);
+			}
+			cout<<"Choose sort category: 1) Lot name 2) Price 3) Sellers 4) Date"<<endl;
+			choose = chooseNumberValidation(d,flag,4);
+			cout<<"Choose sort way: 1) Up 2) Down"<<endl;
+			sortWay = chooseNumberValidation(d,flag,2);
+
+				sortCompareLots(size,lots,choose,sortWay);
+
+			system("PAUSE");
+			break;
 			//5)Delete from LOTS file
 		case 5: 
 			lots = readFromFileLots(&size);
