@@ -295,7 +295,29 @@ int main() {
 			system("PAUSE");
 			break;
 			//9)Sort SELLERS
-		case 9:
+		case 9: sellers = readFromFileSellers(&size);
+			sellersTablePrint();
+			for(int i=0; i<size; i++){
+				printSellers(sellers[i], i+1);
+			}
+			cout<<"Choose category for sorting:\n 1)Name 2)Lastname 3)Phone 4)Mail"<<endl;
+			choose = chooseNumberValidation(d,flag,choose);
+			switch(choose){
+			case 1:
+
+				break;
+			case 2:
+				break;
+			case 3:
+
+		break;
+			case 4:
+				break;
+
+
+			}
+			system("PAUSE");
+			break;
 			//10)Delete from SELLERS file
 		case 10: sellers = readFromFileSellers(&size);
 			for(int i=0; i<size; i++){

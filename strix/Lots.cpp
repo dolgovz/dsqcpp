@@ -9,7 +9,7 @@ void inputLot(Lots *lot) {
 			cout<<"First symbol must be a letter\n";
 		}
 	}
-	while(isdigit(lot->lotName[0])); 
+	while(!isdigit(lot->lotName[0])); 
 
 	do{
 		cout<<"Enter price:";
