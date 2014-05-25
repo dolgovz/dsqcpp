@@ -9,7 +9,7 @@ void inputLot(Lots *lot) {
 			cout<<"First symbol must be a letter\n";
 		}
 	}
-	while(!isdigit(lot->lotName[0])); 
+	while(isdigit(lot->lotName[0])); 
 
 	do{
 		cout<<"Enter price:";
@@ -107,7 +107,7 @@ void inputSeller(Sellers * seller){
 void lotsTablePrint() {
 			cout <<setw(4);
 			cout<<"Id|";
-			cout <<setw(10);
+			cout <<setw(9);
 			cout<<"Lot name|";
 			cout <<setw(10);
 			cout<<"Price|";
@@ -328,3 +328,132 @@ void deleteFromFileSellers(){
 	}
 	g.close();
 }
+
+void sortSellers(int *size, int choose){
+	Sellers *sellers;
+	sellers = readFromFileSellers(size);
+	sellersTablePrint();
+		for(int i=0; i<*size ; i++) {
+				printSellers(sellers[i], i+1);
+			}	
+	ofstream f("sellers.dev",ios::binary);
+		
+			
+	//switch (choose){
+	//case 1:
+
+	//case 2:
+	//
+	//
+	//}
+
+	//for (int i=0;i<*size;i++){
+	//	for (int j=*size-1;j>i;j--){
+ //    if (условие) {
+ //     Sellers t=sellers[j]; sellers[j]=sellers[j-1]; sellers[j-1]=t;
+	// }
+	//	}
+	//}
+	//for (int i=0;i<*size;i++) 
+	//	f.write((char*)&sellers[i],sizeof(Sellers));
+
+}
+
+
+
+void sortCompareLots(int size, Lots *lots, int choose,int sortWay) {
+	char **lotsCat = new char*[size];
+	int *lotsCatInt = new int[size];
+	Sellers *sellers;
+	int superSize;
+	bool condition;
+	switch(choose) {
+	case 1:
+		for (int i = 0; i<size ; i++) {
+			lotsCat[i] = new char[25];
+			strcpy(lotsCat[i],lots[i].lotName);	
+		}
+		break;
+	case 2:
+		for (int i = 0; i<size ; i++) {
+			lotsCatInt[i] = lots[i].price;	
+		}
+		break;
+	case 3:
+		sellers = readFromFileSellers(&superSize);
+
+		for (int i = 0; i<size ; i++) {
+			lotsCat[i] = new char[25];
+			//strcpy(lotsCat[i],lots[i].seller);	
+			for(int j = 0;j<superSize;j++){
+				char *g = strstr(lots[i].seller,sellers[j].date);
+				if (g) {
+					strcpy(lotsCat[i],sellers[j].name);
+				} else {
+					strcpy(lotsCat[i]," ");
+				}
+			}
+			
+		}
+		
+		break;
+	case 4:
+		for (int i = 0; i<size ; i++) {
+			lotsCat[i] = new char[25];
+			strcpy(lotsCat[i],lots[i].date);	
+		}
+		break;	
+	}
+
+
+	for(int i=0; i<size; i++) {
+		for(int j=size-1; j > i; j--) {
+
+			if (choose == 2) {
+				if (sortWay == 1) {
+					condition = lotsCatInt[j] > lotsCatInt[j-1];
+				} else {
+					condition = lotsCatInt[j] < lotsCatInt[j-1];
+				}
+			} else {
+				if (sortWay == 1) {
+					condition = lotsCat[j] > lotsCat[j-1];
+				} else {
+					condition = lotsCat[j] < lotsCat[j-1];
+				}
+			}
+			if(condition){
+				Lots temp;
+				int tempInt;
+				char tempChar[25];
+
+				strcpy(temp.lotName,lots[j].lotName);
+				temp.price=lots[j].price;
+				strcpy(temp.seller,lots[j].seller);
+				strcpy(temp.date,lots[j].date);
+				tempInt = lotsCatInt[j];
+				strcpy(tempChar,lotsCat[j]);
+
+				strcpy(lots[j].lotName,lots[j-1].lotName);
+				lots[j].price=lots[j-1].price;
+				strcpy(lots[j].seller,lots[j-1].seller);
+				strcpy(lots[j].date,lots[j-1].date);
+				lotsCatInt[j] = lotsCatInt[j-1];
+				strcpy(lotsCat[j],lotsCat[j-1]);
+
+				strcpy(lots[j-1].lotName,temp.lotName); 
+				lots[j-1].price=temp.price;
+				strcpy(lots[j-1].seller,temp.seller); 
+				strcpy(lots[j-1].date,temp.date); 
+				lotsCatInt[j-1] = tempInt;
+				strcpy(lotsCat[j-1],lotsCat[j-1]);
+			}
+		}
+	}
+
+	lotsTablePrint();
+	for(int i=0; i<size ; i++) {
+		printLots(lots[i], i+1);
+	}
+}
+

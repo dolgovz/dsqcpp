@@ -32,4 +32,7 @@ void deleteFromFileLots();
 void deleteFromFileSellers();
 Lots * readFromFileLots(int *size);
 Sellers * readFromFileSellers(int *size);
+void sortSellers(int *size, int choose);
+void sortCompareLots(int size, Lots *lots,int choose,int sortWay);
+//void sortCompareSellers(int size, Sellers *sellers,int choose,int sortWay);
 

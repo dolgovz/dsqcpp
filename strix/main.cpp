@@ -15,6 +15,7 @@ int main() {
 	char gh[25];
 	int lotSize;
 	bool flag = false;
+	int sortWay;
 
 	do {
 		system("cls");
@@ -75,7 +76,7 @@ int main() {
 				sellersTablePrint();
 				if (sellerSize < 1){
 					do {
-						cout<<"Firstly you have to add seller.\nDo you want to do it now? y/n";
+						cout<<"Firstly you have to add seller.\nDo you want to do it now? (y/n):";
 						cin.getline(yn,25);
 					}
 					while((yn[0] != 'y' && yn[0] !='n') || strlen(yn)>1);
@@ -202,6 +203,21 @@ int main() {
 
 			//4)Sort lots
 		case 4:
+			lots = readFromFileLots(&size);
+			lotsTablePrint();
+			
+			for(int i=0; i<size ; i++) {
+				printLots(lots[i], i+1);
+			}
+			cout<<"Choose sort category: 1) Lot name 2) Price 3) Sellers 4) Date"<<endl;
+			choose = chooseNumberValidation(d,flag,4);
+			cout<<"Choose sort way: 1) Up 2) Down"<<endl;
+			sortWay = chooseNumberValidation(d,flag,2);
+
+				sortCompareLots(size,lots,choose,sortWay);
+
+			system("PAUSE");
+			break;
 			//5)Delete from LOTS file
 		case 5: 
 			lots = readFromFileLots(&size);
@@ -295,27 +311,8 @@ int main() {
 			system("PAUSE");
 			break;
 			//9)Sort SELLERS
-		case 9: sellers = readFromFileSellers(&size);
-			sellersTablePrint();
-			for(int i=0; i<size; i++){
-				printSellers(sellers[i], i+1);
-			}
-			cout<<"Choose category for sorting:\n 1)Name 2)Lastname 3)Phone 4)Mail"<<endl;
-			choose = chooseNumberValidation(d,flag,choose);
-			switch(choose){
-			case 1:
-
-				break;
-			case 2:
-				break;
-			case 3:
-
-		break;
-			case 4:
-				break;
-
-
-			}
+		case 9: sortSellers;
+			
 			system("PAUSE");
 			break;
 			//10)Delete from SELLERS file
