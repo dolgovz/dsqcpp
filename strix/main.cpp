@@ -311,8 +311,25 @@ int main() {
 			system("PAUSE");
 			break;
 			//9)Sort SELLERS
-		case 9: sortSellers;
+		case 9: 
+			sellers = readFromFileSellers(&size);
+			sellersTablePrint();
 			
+			for(int i=0; i<size ; i++) {
+				printSellers(sellers[i], i+1);
+			}
+			cout<<"Choose sort category: 1) Name 2) Surname 3) Phone 4) Email"<<endl;
+			choose = chooseNumberValidation(d,flag,4);
+			cout<<"Choose sort way: 1) Up 2) Down"<<endl;
+			sortWay = chooseNumberValidation(d,flag,2);
+
+				sortCompareSellers(size,sellers,choose,sortWay);
+
+			system("PAUSE");
+			break;
+
+
+
 			system("PAUSE");
 			break;
 			//10)Delete from SELLERS file

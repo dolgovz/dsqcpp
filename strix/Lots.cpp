@@ -329,38 +329,6 @@ void deleteFromFileSellers(){
 	g.close();
 }
 
-void sortSellers(int *size, int choose){
-	Sellers *sellers;
-	sellers = readFromFileSellers(size);
-	sellersTablePrint();
-		for(int i=0; i<*size ; i++) {
-				printSellers(sellers[i], i+1);
-			}	
-	ofstream f("sellers.dev",ios::binary);
-		
-			
-	//switch (choose){
-	//case 1:
-
-	//case 2:
-	//
-	//
-	//}
-
-	//for (int i=0;i<*size;i++){
-	//	for (int j=*size-1;j>i;j--){
- //    if (условие) {
- //     Sellers t=sellers[j]; sellers[j]=sellers[j-1]; sellers[j-1]=t;
-	// }
-	//	}
-	//}
-	//for (int i=0;i<*size;i++) 
-	//	f.write((char*)&sellers[i],sizeof(Sellers));
-
-}
-
-
-
 void sortCompareLots(int size, Lots *lots, int choose,int sortWay) {
 	char **lotsCat = new char*[size];
 	int *lotsCatInt = new int[size];
@@ -462,6 +430,102 @@ void sortCompareLots(int size, Lots *lots, int choose,int sortWay) {
 	lotsTablePrint();
 	for(int i=0; i<size ; i++) {
 		printLots(lots[i], i+1);
+	}
+}
+void sortCompareSellers(int size, Sellers *sellers, int choose,int sortWay) {
+	char **sellersCat = new char*[size];
+	int *sellersCatInt = new int[size];
+	bool condition;
+	switch(choose) {
+	case 1:
+		for (int i = 0; i<size ; i++) {
+			sellersCat[i] = new char[25];
+			strcpy(sellersCat[i],sellers[i].name);	
+			 for(int j = 0; j<25; j++) {
+				 sellersCat[i][j] = tolower(sellersCat[i][j]);
+			 }
+		}
+		break;
+	case 2:
+		for (int i = 0; i<size ; i++) {
+			sellersCat[i] = new char[25];
+			strcpy(sellersCat[i],sellers[i].lastName);	
+			 for(int j = 0; j<25; j++) {
+				 sellersCat[i][j] = tolower(sellersCat[i][j]);
+			 }
+		}
+		break;
+	case 3:
+		for (int i = 0; i<size ; i++) {
+			sellersCat[i] = new char[25];
+			sellersCatInt[i] = sellers[i].phone;	
+			strcpy(sellersCat[i],"");	
+		}
+		break;	
+	case 4:
+		for (int i = 0; i<size ; i++) {
+			sellersCat[i] = new char[25];
+			strcpy(sellersCat[i],sellers[i].mail);	
+			 for(int j = 0; j<25; j++) {
+				 sellersCat[i][j] = tolower(sellersCat[i][j]);
+			 }
+		}
+		break;	
+	
+	}
+	for(int i=0; i<size ; i++) {
+		cout<<sellersCat[i]<<endl;
+	}
+	for(int i = 0; i < size - 1; i++){
+		for(int j = i + 1; j < size; j++){
+			if (choose == 3) {
+				if (sortWay == 1) {
+					condition = sellersCatInt[i] > sellersCatInt[j];
+				} else {
+					condition = sellersCatInt[i] < sellersCatInt[j];
+				}
+			} else {
+				if (sortWay == 1) {
+					condition = strcmp(sellersCat[i], sellersCat[j]) > 0;
+				} else {
+					condition = strcmp(sellersCat[i], sellersCat[j]) < 0;
+				}
+			}
+			if(condition){
+				Sellers temp;
+				int tempInt;
+				char tempChar[25];
+
+				strcpy(temp.name,sellers[i].name);
+				strcpy(temp.lastName,sellers[i].lastName);
+				temp.phone = sellers[i].phone;
+				strcpy(temp.mail,sellers[i].mail);
+				strcpy(temp.date,sellers[i].date);
+				tempInt = sellersCatInt[i];
+				strcpy(tempChar,sellersCat[i]);
+
+				strcpy(sellers[i].name,sellers[j].name);
+				strcpy(sellers[i].lastName,sellers[j].lastName);
+				sellers[i].phone = sellers[j].phone;
+				strcpy(sellers[i].mail,sellers[j].mail);
+				strcpy(sellers[i].date,sellers[j].date);
+				sellersCatInt[i] = sellersCatInt[j];
+				strcpy(sellersCat[i],sellersCat[j]);
+
+				strcpy(sellers[j].name,temp.name);
+				strcpy(sellers[j].lastName,temp.lastName);
+				sellers[j].phone = temp.phone;
+				strcpy(sellers[j].mail,temp.mail);
+				strcpy(sellers[j].date,temp.date);
+				sellersCatInt[j] = tempInt;
+				strcpy(sellersCat[j],tempChar);
+			}
+		}
+	}
+
+	sellersTablePrint();
+	for(int i=0; i<size ; i++) {
+		printSellers(sellers[i], i+1);
 	}
 }
 
