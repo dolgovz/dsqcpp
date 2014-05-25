@@ -388,14 +388,14 @@ void sortCompareLots(int size, Lots *lots, int choose,int sortWay) {
 		sellers = readFromFileSellers(&superSize);
 
 		for (int i = 0; i<size ; i++) {
-			lotsCat[i] = new char[25];
-			//strcpy(lotsCat[i],lots[i].seller);	
+			lotsCat[i] = new char[25];	
 			for(int j = 0;j<superSize;j++){
 				char *g = strstr(lots[i].seller,sellers[j].date);
 				if (g) {
 					strcpy(lotsCat[i],sellers[j].name);
+					break;
 				} else {
-					strcpy(lotsCat[i]," ");
+					strcpy(lotsCat[i],"~");
 				}
 			}
 			for(int j = 0; j<25; j++) {
@@ -414,7 +414,6 @@ void sortCompareLots(int size, Lots *lots, int choose,int sortWay) {
 		}
 		break;	
 	}
-
 
 	for(int i = 0; i < size - 1; i++){
 		for(int j = i + 1; j < size; j++){
