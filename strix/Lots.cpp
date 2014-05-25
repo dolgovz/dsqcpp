@@ -379,7 +379,9 @@ void sortCompareLots(int size, Lots *lots, int choose,int sortWay) {
 		break;
 	case 2:
 		for (int i = 0; i<size ; i++) {
+			lotsCat[i] = new char[25];
 			lotsCatInt[i] = lots[i].price;	
+			strcpy(lotsCat[i],"");	
 		}
 		break;
 	case 3:
@@ -412,18 +414,6 @@ void sortCompareLots(int size, Lots *lots, int choose,int sortWay) {
 		}
 		break;	
 	}
-
-	//for(int i = 0; i < size - 1; i++){
-	//	for(int j = i + 1; j < size; j++){
-	//		if(strcmp(lotsCat[i], lotsCat[j]) < 0) {
-	//			char tmp[25];
-	//			strcpy(tmp,lotsCat[i]);
-	//			strcpy(lotsCat[i] , lotsCat[j]);
-	//			strcpy(lotsCat[j] , tmp);
-	//			
-	//		}
-	//	}
-	//}
 
 
 	for(int i = 0; i < size - 1; i++){
