@@ -372,6 +372,9 @@ void sortCompareLots(int size, Lots *lots, int choose,int sortWay) {
 		for (int i = 0; i<size ; i++) {
 			lotsCat[i] = new char[25];
 			strcpy(lotsCat[i],lots[i].lotName);	
+			 for(int j = 0; j<25; j++) {
+				 lotsCat[i][j] = tolower(lotsCat[i][j]);
+			 }
 		}
 		break;
 	case 2:
@@ -393,7 +396,9 @@ void sortCompareLots(int size, Lots *lots, int choose,int sortWay) {
 					strcpy(lotsCat[i]," ");
 				}
 			}
-			
+			for(int j = 0; j<25; j++) {
+				lotsCat[i][j] = tolower(lotsCat[i][j]);
+			}
 		}
 		
 		break;
@@ -401,25 +406,39 @@ void sortCompareLots(int size, Lots *lots, int choose,int sortWay) {
 		for (int i = 0; i<size ; i++) {
 			lotsCat[i] = new char[25];
 			strcpy(lotsCat[i],lots[i].date);	
+			 for(int j = 0; j<25; j++) {
+				 lotsCat[i][j] = tolower(lotsCat[i][j]);
+			 }
 		}
 		break;	
 	}
 
+	//for(int i = 0; i < size - 1; i++){
+	//	for(int j = i + 1; j < size; j++){
+	//		if(strcmp(lotsCat[i], lotsCat[j]) < 0) {
+	//			char tmp[25];
+	//			strcpy(tmp,lotsCat[i]);
+	//			strcpy(lotsCat[i] , lotsCat[j]);
+	//			strcpy(lotsCat[j] , tmp);
+	//			
+	//		}
+	//	}
+	//}
 
-	for(int i=0; i<size; i++) {
-		for(int j=size-1; j > i; j--) {
 
+	for(int i = 0; i < size - 1; i++){
+		for(int j = i + 1; j < size; j++){
 			if (choose == 2) {
 				if (sortWay == 1) {
-					condition = lotsCatInt[j] > lotsCatInt[j-1];
+					condition = lotsCatInt[i] > lotsCatInt[j];
 				} else {
-					condition = lotsCatInt[j] < lotsCatInt[j-1];
+					condition = lotsCatInt[i] < lotsCatInt[j];
 				}
 			} else {
 				if (sortWay == 1) {
-					condition = lotsCat[j] > lotsCat[j-1];
+					condition = strcmp(lotsCat[i], lotsCat[j]) > 0;
 				} else {
-					condition = lotsCat[j] < lotsCat[j-1];
+					condition = strcmp(lotsCat[i], lotsCat[j]) < 0;
 				}
 			}
 			if(condition){
@@ -427,26 +446,26 @@ void sortCompareLots(int size, Lots *lots, int choose,int sortWay) {
 				int tempInt;
 				char tempChar[25];
 
-				strcpy(temp.lotName,lots[j].lotName);
-				temp.price=lots[j].price;
-				strcpy(temp.seller,lots[j].seller);
-				strcpy(temp.date,lots[j].date);
-				tempInt = lotsCatInt[j];
-				strcpy(tempChar,lotsCat[j]);
+				strcpy(temp.lotName,lots[i].lotName);
+				temp.price=lots[i].price;
+				strcpy(temp.seller,lots[i].seller);
+				strcpy(temp.date,lots[i].date);
+				tempInt = lotsCatInt[i];
+				strcpy(tempChar,lotsCat[i]);
 
-				strcpy(lots[j].lotName,lots[j-1].lotName);
-				lots[j].price=lots[j-1].price;
-				strcpy(lots[j].seller,lots[j-1].seller);
-				strcpy(lots[j].date,lots[j-1].date);
-				lotsCatInt[j] = lotsCatInt[j-1];
-				strcpy(lotsCat[j],lotsCat[j-1]);
+				strcpy(lots[i].lotName,lots[j].lotName);
+				lots[i].price=lots[j].price;
+				strcpy(lots[i].seller,lots[j].seller);
+				strcpy(lots[i].date,lots[j].date);
+				lotsCatInt[i] = lotsCatInt[j];
+				strcpy(lotsCat[i],lotsCat[j]);
 
-				strcpy(lots[j-1].lotName,temp.lotName); 
-				lots[j-1].price=temp.price;
-				strcpy(lots[j-1].seller,temp.seller); 
-				strcpy(lots[j-1].date,temp.date); 
-				lotsCatInt[j-1] = tempInt;
-				strcpy(lotsCat[j-1],lotsCat[j-1]);
+				strcpy(lots[j].lotName,temp.lotName); 
+				lots[j].price=temp.price;
+				strcpy(lots[j].seller,temp.seller); 
+				strcpy(lots[j].date,temp.date); 
+				lotsCatInt[j] = tempInt;
+				strcpy(lotsCat[j],tempChar);
 			}
 		}
 	}

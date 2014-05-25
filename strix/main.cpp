@@ -20,7 +20,7 @@ int main() {
 	do {
 		system("cls");
 
-		cout<<"--------------------------\n        LOTS MENU         |\n--------------------------\n 1 | Add LOT to file\n 2 | Read LOTS from file\n 3 | Search LOT\n 4 | Sort LOTS\n 5 | Delete LOT from file\n--------------------------\n       SELLERS MENU       |\n--------------------------\n 6 | Add SELLER to file\n 7 | Read SELLERS from file\n 8 | Search SELLER\n 9 | Sort LOTS\n 10 | Delete SELLER from file\n--------------------------\n 11 | Exit                 |\n--------------------------\n";
+		cout<<"--------------------------\n        LOTS MENU         |\n--------------------------\n 1 | Add LOT to file\n 2 | Read LOTS from file\n 3 | Search LOT\n 4 | Sort LOTS\n 5 | Delete LOT from file\n--------------------------\n       SELLERS MENU       |\n--------------------------\n 6 | Add SELLER to file\n 7 | Read SELLERS from file\n 8 | Search SELLER\n 9 | Sort LOTS\n 10| Delete SELLER from file\n--------------------------\n 11| Exit                 |\n--------------------------\n";
 
 
 		do {
