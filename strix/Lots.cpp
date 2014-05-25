@@ -495,9 +495,6 @@ void sortCompareSellers(int size, Sellers *sellers, int choose,int sortWay) {
 		break;	
 	
 	}
-	for(int i=0; i<size ; i++) {
-		cout<<sellersCat[i]<<endl;
-	}
 	for(int i = 0; i < size - 1; i++){
 		for(int j = i + 1; j < size; j++){
 			if (choose == 3) {
