@@ -155,31 +155,53 @@ void printLots(Lots lots, int i) {
 };
 
 void printSellers(Sellers sellers, int i) {
-
 		int size;
-	   char lotName[25] = "";
-	Lots *lots = readFromFileLots(&size);
-	for (int i = 0; i<size; i++) {
-		char *g = strstr(lots[i].seller,sellers.date);
-		if (g) {
-			strcpy(lotName,lots[i].lotName);
+		Lots *lots = readFromFileLots(&size);
+		char **lotName = new char*[size];
+		int lotsSize = 0;
+		for (int i = 0; i<size; i++) {
+			char *g = strstr(lots[i].seller,sellers.date);
+			if (g) {
+				lotName[lotsSize] = new char[25];
+				strcpy(lotName[lotsSize],lots[i].lotName);
+				lotsSize++;
+			}
 		}
-	}
-
-			cout <<setw(3);
-			cout<<i<<"|";
-			cout <<setw(9);
-			cout<<sellers.name<<"|";
-			cout <<setw(9);
-			cout<<sellers.lastName<<"|";
-			cout <<setw(9);
-			cout<<sellers.phone<<"|";
-			cout <<setw(17);
-			cout<<sellers.mail<<"|";
-			cout <<setw(11);
-			cout<<lotName<<endl;
+		if (lotsSize == 0) {
+			lotName[0] = " ";
+		}
 
 
+		cout <<setw(3);
+		cout<<i<<"|";
+		cout <<setw(9);
+		cout<<sellers.name<<"|";
+		cout <<setw(9);
+		cout<<sellers.lastName<<"|";
+		cout <<setw(9);
+		cout<<sellers.phone<<"|";
+		cout <<setw(17);
+		cout<<sellers.mail<<"|";
+		cout <<setw(11);
+		cout<<lotName[0]<<endl;
+		
+		if (lotsSize > 1) {
+			for (int i = 1; i < lotsSize; i++) {
+				cout <<setw(3);
+				cout<<" "<<"|";
+				cout <<setw(9);
+				cout<<" "<<"|";
+				cout <<setw(9);
+				cout<<" "<<"|";
+				cout<<setw(9);
+				cout<<" "<<"|";
+				cout <<setw(17);
+				cout<<" "<<"|";
+				cout <<setw(11);
+				cout<<lotName[i]<<endl;
+			}
+		}
+			
 };
 int chooseNumberValidation(char *d,bool flag,int size) {
 	int number;

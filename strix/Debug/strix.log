@@ -1,7 +1,7 @@
-﻿Build started 25.05.2014 17:30:56.
+﻿Build started 25.05.2014 18:16:06.
      1>Project "C:\Users\Edgar\Documents\Visual Studio 2010\Projects\dsqcpp\strix\strix.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating "Debug\strix.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "Debug\strix.unsuccessfulbuild".
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt Lots.cpp
          Lots.cpp
@@ -28,87 +28,87 @@
      1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(146): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
                  c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(139) : definition of 'i' ignored
                  c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(135) : definition of 'i' used
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(165): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(166): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(170): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(176): warning C4258: 'i' : definition from the for loop is ignored; the definition from the enclosing scope is used
                  c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(162) : definition of 'i' ignored
                  c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(157) : definition of 'i' used
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(189): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(245): warning C4244: '=' : conversion from 'std::streamoff' to 'int', possible loss of data
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(263): warning C4244: '=' : conversion from 'std::streamoff' to 'int', possible loss of data
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(281): warning C4244: '=' : conversion from 'std::streamoff' to 'int', possible loss of data
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(310): warning C4244: '=' : conversion from 'std::streamoff' to 'int', possible loss of data
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(342): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(211): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(267): warning C4244: '=' : conversion from 'std::streamoff' to 'int', possible loss of data
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(285): warning C4244: '=' : conversion from 'std::streamoff' to 'int', possible loss of data
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(303): warning C4244: '=' : conversion from 'std::streamoff' to 'int', possible loss of data
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(332): warning C4244: '=' : conversion from 'std::streamoff' to 'int', possible loss of data
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(364): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(352): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(374): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(363): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(385): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(366): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(388): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(378): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(400): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(406): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(428): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(408): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(430): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(409): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(431): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(411): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(433): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(413): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(435): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(415): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(437): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(416): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(438): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(418): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(440): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(420): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(442): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(422): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(444): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(423): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(445): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(425): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(447): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(443): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(465): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(452): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(474): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(462): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(484): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(468): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(499): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(500): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(502): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(503): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(505): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(507): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(508): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(510): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(511): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(513): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(515): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(516): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(518): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
-     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(519): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(490): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
      1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(521): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(522): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(524): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(525): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(527): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(529): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(530): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(532): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(533): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(535): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(537): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(538): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(540): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(541): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
+     1>c:\users\edgar\documents\visual studio 2010\projects\dsqcpp\strix\lots.cpp(543): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
                  c:\program files (x86)\microsoft visual studio 10.0\vc\include\string.h(105) : see declaration of 'strcpy'
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Edgar\Documents\Visual Studio 2010\Projects\dsqcpp\Debug\strix.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\strix.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Edgar\Documents\Visual Studio 2010\Projects\dsqcpp\Debug\strix.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Edgar\Documents\Visual Studio 2010\Projects\dsqcpp\Debug\strix.lib" /MACHINE:X86 Debug\Lots.obj
@@ -124,4 +124,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:02.21
+Time Elapsed 00:00:02.16
